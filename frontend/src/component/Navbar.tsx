@@ -2,53 +2,49 @@ import {
   Navbar,
   NavbarBrand,
   NavbarCollapse,
-  NavbarLink,
-  NavbarToggle,
 } from "flowbite-react";
 
 import { Link } from "react-router-dom";
 
 export default function NavbarComponent() {
   return (
-    <Navbar fluid rounded>
+    <div className="py-6 pt-20"> {/* espace au-dessus */}
+      <Navbar
       
-      <NavbarBrand as={Link} href="/">
-        <img
-          src="/favicon.svg"
-          className="mr-3 h-6 sm:h-9"
-          alt="Cabinet Avocat Logo"
-        />
-        <span className="self-center whitespace-nowrap text-xl font-semibold">
-          Cabinet Avocat
-        </span>
-      </NavbarBrand>
+        fluid
+        className="bg-[#D9D9D9] w-[60%] rounded-[15px] px-12 py-4 shadow-md" 
+      > 
+        {/* Logo */}
+        <NavbarBrand as={Link} href="/">
+          <span className="text-xl font-bold text-gray-900">
+           LOGO
+          </span>
+        </NavbarBrand>
 
-      <NavbarToggle />
+       <div className="flex items-center ml-auto space-x-12">
 
-      <NavbarCollapse>
+  <Link to="/" className="text-gray-800 font-medium hover:text-black">
+    Accueil
+  </Link>
 
-        <NavbarLink as={Link} href="/" active>
-          Accueil
-        </NavbarLink>
+  <Link to="/apropos" className="text-gray-800 font-medium hover:text-black">
+    À propos
+  </Link>
 
-        <NavbarLink as={Link} href="/apropos">
-          A propos
-        </NavbarLink>
+  <Link to="/services" className="text-gray-800 font-medium hover:text-black">
+    Services
+  </Link>
 
-        <NavbarLink as={Link} href="/services">
-          Services
-        </NavbarLink>
+  <Link to="/actualites" className="text-gray-800 font-medium hover:text-black">
+    Actualités
+  </Link>
 
-        <NavbarLink as={Link} href="/actualites">
-          Actualites
-        </NavbarLink>
+  <Link to="/contact" className="text-gray-800 font-medium hover:text-black">
+    Contact
+  </Link>
 
-        <NavbarLink as={Link} href="/contact">
-          Contact
-        </NavbarLink>
-
-      </NavbarCollapse>
-
-    </Navbar>
+</div>
+      </Navbar>
+    </div>
   );
 }
